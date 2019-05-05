@@ -44,6 +44,8 @@ function post_install(){
 
     setup_configuration "${PEARL_PKGVARDIR}/vimrc" \
         _new_vimrc _apply_vimrc _unapply_vimrc
+
+    return 0
 }
 
 function post_update(){

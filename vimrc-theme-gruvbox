@@ -5,4 +5,8 @@ else
     set background=dark
 endif
 
+" This make spell highlight still working
+" https://github.com/morhetz/gruvbox/issues/175
+let g:gruvbox_guisp_fallback = "bg"
+
 colorscheme gruvbox

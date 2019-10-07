@@ -42,6 +42,16 @@ function post_install(){
     [[ -e "$plugin_root/$pluginname/doc" ]] && \
         vim -c "helptags $plugin_root/$pluginname/doc" -c q
 
+    local pluginname=gruvbox
+    local giturl=https://github.com/morhetz/gruvbox.git
+
+    info "Installing or updating the $pluginname git repository..."
+    local plugin_root="${PEARL_PKGVARDIR}/plugins/pack/pearl/start"
+    mkdir -p "$plugin_root"
+    install_or_update_git_repo $giturl "$plugin_root/$pluginname" master
+    [[ -e "$plugin_root/$pluginname/doc" ]] && \
+        vim -c "helptags $plugin_root/$pluginname/doc" -c q
+
     setup_configuration "${PEARL_PKGVARDIR}/vimrc" \
         _new_vimrc _apply_vimrc _unapply_vimrc
 

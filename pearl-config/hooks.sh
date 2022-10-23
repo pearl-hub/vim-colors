@@ -16,7 +16,7 @@ function post_install(){
     info "Installing or updating the $pluginname git repository..."
     local plugin_root="${PEARL_PKGVARDIR}/plugins/pack/pearl/start"
     mkdir -p "$plugin_root"
-    install_or_update_git_repo $giturl "$plugin_root/$pluginname" master
+    install_or_update_git_repo $giturl "$plugin_root/$pluginname" main
     [[ -e "$plugin_root/$pluginname/doc" ]] && \
         vim -c "helptags $plugin_root/$pluginname/doc" -c q
 
